@@ -25,7 +25,7 @@ class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = recipeList[position].name.toString()
+        holder.name.text = recipeList[position].name
         holder.summary.text = recipeList[position].summary
     }
 

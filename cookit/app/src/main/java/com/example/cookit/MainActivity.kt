@@ -7,7 +7,6 @@ import android.util.Log.d
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookit.network.ApiInterface
 import com.example.cookit.network.Recipe
@@ -17,7 +16,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.NullPointerException
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,20 +28,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //get data from editText
         var btnSearch: Button
         var etSearch: EditText
         btnSearch = findViewById(R.id.btnSearchRecipe)
         etSearch = findViewById(R.id.etSearchIng)
         val text = etSearch.text.toString()
 
+        //set recycler view
         rvrecipeItems.setHasFixedSize(true)
         LinearLayoutManager = LinearLayoutManager(this)
         rvrecipeItems.layoutManager = LinearLayoutManager
 
+        //onclicklistener
         btnSearch.setOnClickListener(View.OnClickListener() {
             fun onClick() {
-
-                Log.v("Button pressed","$text")
+                Log.v("Button pressed",""+text)
                 getRecipes(text)
             }
             onClick()
@@ -51,24 +51,33 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+        //API Call
         private fun getRecipes(text:String){
-            val BASE_URL = "https://sintagesapi.herokuapp.com/api/recipe-search/"
+            val BASE_URL = "https://sintagesapi.herokuapp.com/api/"
             val retrofitBuilder = Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(BASE_URL)
                 .build()
                 .create(ApiInterface::class.java)
 
+            //getRecipe from ApiInterface
             val retrofitData = retrofitBuilder.getRecipe(text)
-            retrofitData.enqueue(object : Callback<List<Recipe>?> {
+            retrofitData.enqueue(object : Callback<List<Recipe>> {
                 override fun onResponse(
-                    call: Call<List<Recipe>?>,
-                    response: Response<List<Recipe>?>
+                    call: Call<List<Recipe>>,
+                    response: Response<List<Recipe>>
                 ) {
                     val responseBody = response.body()
-                    rowAdapter = RowAdapter(baseContext, responseBody!!)
-                    rowAdapter.notifyDataSetChanged()
-                    rvrecipeItems.adapter = rowAdapter
+
+                    //So app does not crash
+                    if (responseBody != null){
+                        rowAdapter = RowAdapter(baseContext, responseBody!!)
+                        rowAdapter.notifyDataSetChanged()
+                        rvrecipeItems.adapter = rowAdapter
+                    }
+                    else{
+                        d("Null error","")
+                    }
                 }
 
                 override fun onFailure(call: Call<List<Recipe>?>, t: Throwable) {

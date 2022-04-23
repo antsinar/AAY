@@ -7,6 +7,6 @@ import retrofit2.http.Path
 
 interface ApiInterface {
 
-    @GET("{text}")
+    @GET("recipe-search/{text}/")
     fun getRecipe(@Path("text") text:String): Call<List<Recipe>>
 }
