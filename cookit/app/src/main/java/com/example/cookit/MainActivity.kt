@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         var etSearch: EditText
         btnSearch = findViewById(R.id.btnSearchRecipe)
         etSearch = findViewById(R.id.etSearchIng)
-        val text = etSearch.text.toString()
+
 
         //set recycler view
         rvrecipeItems.setHasFixedSize(true)
@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         //onclicklistener
         btnSearch.setOnClickListener(View.OnClickListener() {
             fun onClick() {
+                val text = etSearch.text.toString()
                 Log.v("Button pressed",""+text)
                 getRecipes(text)
             }
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
                     //So app does not crash
                     if (responseBody != null){
-                        rowAdapter = RowAdapter(baseContext, responseBody!!)
+                        rowAdapter = RowAdapter(baseContext, responseBody)
                         rowAdapter.notifyDataSetChanged()
                         rvrecipeItems.adapter = rowAdapter
                     }
