@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookit.network.ApiInterface
 import com.example.cookit.network.Recipe
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         //get data from editText
         var btnSearch: Button
         var etSearch: EditText
+
         btnSearch = findViewById(R.id.btnSearchRecipe)
         etSearch = findViewById(R.id.etSearchIng)
 

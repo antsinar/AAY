@@ -4,13 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 data class Recipe(
     @SerializedName("id")
-    val id: Int,
+    var id: Int,
     @SerializedName("name")
     val name: String,
     @SerializedName("author")
     val author: String,
     @SerializedName("summary")
     val summary: String,
+    @SerializedName("image")
+    val image: String,
     @SerializedName("ing0")
     val ing0: String,
     @SerializedName("ing1")
@@ -74,3 +76,4 @@ data class Recipe(
     @SerializedName("step9")
     val step9: String,
     )
+
