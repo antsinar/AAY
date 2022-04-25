@@ -34,7 +34,6 @@ class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerV
 
             name = itemView.tvname
             summary = itemView.tvsummary
-
             layout = itemView.linearLayout
 
         }
@@ -74,6 +73,34 @@ class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerV
 
                         intent.putExtra("name", recipeList[position].name)
                         intent.putExtra("id",recipeList[position].id)
+                        intent.putExtra("ing0", recipeList[position].ing0)
+                        intent.putExtra("ing1",recipeList[position].ing1)
+                        intent.putExtra("ing2", recipeList[position].ing2)
+                        intent.putExtra("ing3",recipeList[position].ing3)
+                        intent.putExtra("ing4", recipeList[position].ing4)
+                        intent.putExtra("ing5",recipeList[position].ing5)
+                        intent.putExtra("ing6", recipeList[position].ing6)
+                        intent.putExtra("ing7",recipeList[position].ing7)
+                        intent.putExtra("ing8", recipeList[position].ing8)
+                        intent.putExtra("ing9",recipeList[position].ing9)
+                        intent.putExtra("ing10", recipeList[position].ing10)
+                        intent.putExtra("ing11",recipeList[position].ing11)
+                        intent.putExtra("ing12", recipeList[position].ing12)
+                        intent.putExtra("ing13",recipeList[position].ing13)
+                        intent.putExtra("ing14", recipeList[position].ing14)
+                        intent.putExtra("ing15",recipeList[position].ing15)
+                        intent.putExtra("ing16", recipeList[position].ing16)
+                        intent.putExtra("ing17",recipeList[position].ing17)
+                        intent.putExtra("ing18", recipeList[position].ing18)
+                        intent.putExtra("ing19",recipeList[position].ing19)
+                        intent.putExtra("step0", recipeList[position].step0)
+                        intent.putExtra("step1",recipeList[position].step1)
+                        intent.putExtra("step2", recipeList[position].step2)
+                        intent.putExtra("step3",recipeList[position].step3)
+                        intent.putExtra("step4", recipeList[position].step4)
+                        intent.putExtra("step5",recipeList[position].step5)
+                        intent.putExtra("step6", recipeList[position].step6)
+                        intent.putExtra("step7",recipeList[position].step7)
 
                         context.startActivity(intent)
                     } else {

@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
                     //So app does not crash
                     if (responseBody != null){
+
                         rowAdapter = RowAdapter(baseContext, responseBody)
                         rowAdapter.notifyDataSetChanged()
                         rvrecipeItems.adapter = rowAdapter
