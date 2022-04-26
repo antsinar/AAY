@@ -26,52 +26,75 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="409dp"
-        android:layout_height="796dp"
+        android:layout_width="350dp"
+        android:layout_height="824dp"
         app:layout_constraintBottom_toTopOf="@+id/btnToSearch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/tvRecipeName">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/><TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""/>
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tvAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
             <TextView
                 android:id="@+id/tvIng0"
                 android:layout_width="wrap_content"
@@ -79,6 +102,7 @@
                 android:text="Text"
                 android:textSize="16sp"
                 android:textStyle="normal" />
+
             <TextView
                 android:id="@+id/tvIng1"
                 android:layout_width="wrap_content"
@@ -298,18 +322,31 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""/>
+                android:text="" />
 
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="45dp"
+        android:layout_height="812dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnToSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecipeName"></LinearLayout>
+
     <!--
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvRecipeActivity"

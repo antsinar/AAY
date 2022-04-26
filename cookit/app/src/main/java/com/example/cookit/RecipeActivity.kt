@@ -50,6 +50,7 @@ class RecipeActivity : AppCompatActivity(){
 
         if(intent.hasExtra("name") && intent.hasExtra("id")){
             val name: String? = intent.getStringExtra("name")
+            val author: String? = intent.getStringExtra("author")
             val ing0: String? = intent.getStringExtra("ing0")
             val ing1: String? = intent.getStringExtra("ing1")
             val ing2: String? = intent.getStringExtra("ing2")
@@ -81,13 +82,14 @@ class RecipeActivity : AppCompatActivity(){
 
             val id: Int = intent.getIntExtra("id",1)
 
-            setRecipe(name,ing0,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9,ing10,ing11,ing12,ing13,ing14,ing15,ing16,ing17,ing18,ing19,step0,step1,step2,step3,step4,step5,step6,step7)
+            setRecipe(name,author,ing0,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9,ing10,ing11,ing12,ing13,ing14,ing15,ing16,ing17,ing18,ing19,step0,step1,step2,step3,step4,step5,step6,step7)
             getDetails(id)
         }
     }
 
-    private fun setRecipe(name: String?,ing0: String?,ing1: String?,ing2: String?,ing3: String?,ing4: String?,ing5: String?,ing6: String?,ing7: String?,ing8: String?,ing9: String?,ing10: String?,ing11: String?,ing12: String?,ing13: String?,ing14: String?,ing15: String?,ing16: String?,ing17: String?,ing18: String?,ing19: String?,step0: String?,step1: String?,step2: String?,step3: String?,step4: String?,step5: String?,step6: String?,step7: String?){
+    private fun setRecipe(name: String?,author: String?,ing0: String?,ing1: String?,ing2: String?,ing3: String?,ing4: String?,ing5: String?,ing6: String?,ing7: String?,ing8: String?,ing9: String?,ing10: String?,ing11: String?,ing12: String?,ing13: String?,ing14: String?,ing15: String?,ing16: String?,ing17: String?,ing18: String?,ing19: String?,step0: String?,step1: String?,step2: String?,step3: String?,step4: String?,step5: String?,step6: String?,step7: String?){
         val tvRecipeName: TextView = findViewById(R.id.tvRecipeName)
+        val tvAuthor: TextView = findViewById(R.id.tvAuthor)
         val tvIng0: TextView = findViewById(R.id.tvIng0)
         val tvIng1: TextView = findViewById(R.id.tvIng1)
         val tvIng2: TextView = findViewById(R.id.tvIng2)
@@ -118,6 +120,7 @@ class RecipeActivity : AppCompatActivity(){
         val tvStep7: TextView = findViewById(R.id.tvStep7)
 
         tvRecipeName.text = name
+        tvAuthor.text = author
         tvIng0.text = ing0
         tvIng1.text = ing1
         tvIng2.text = ing2

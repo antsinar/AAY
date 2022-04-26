@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         //onclicklistener
         btnSearch.setOnClickListener(View.OnClickListener() {
             fun onClick() {
-                val text = etSearch.text.toString()
+                val text = etSearch.text.toString().toLowerCase()
                 Log.v("Button pressed",""+text)
                 getRecipes(text)
             }

@@ -73,6 +73,7 @@ class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerV
 
                         intent.putExtra("name", recipeList[position].name)
                         intent.putExtra("id",recipeList[position].id)
+                        intent.putExtra("author",recipeList[position].author)
                         intent.putExtra("ing0", recipeList[position].ing0)
                         intent.putExtra("ing1",recipeList[position].ing1)
                         intent.putExtra("ing2", recipeList[position].ing2)
