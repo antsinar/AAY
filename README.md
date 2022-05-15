@@ -1,3 +1,4 @@
+
 # Documentation Για Android Studio Project
 
 [cookEat APK](https://github.com/antsinar/AAY/releases/tag/pre-release)
@@ -221,3 +222,4 @@ OnClickListener για το κουμπί ("@+id/btnToSearch") ώστε να επ
                         `rowAdapter.notifyDataSetChanged()`
                         `rvrecipeItems.adapter = rowAdapter`
 που ανανεώνει το recyclerView και βλέπουμε τα αποτελέσματα της αναζήτησης στην οθόνη μας.
+
