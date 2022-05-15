@@ -1,9 +1,9 @@
 
 # Documentation Για Android Studio Project
-<br>
+
 [cookEat APK](https://github.com/antsinar/AAY/releases/tag/pre-release)
-<br>
-#### Για την υλοποίηση χρειάστηκαν οι εξής πηγές από το internet<br>
+
+#### Για την υλοποίηση χρειάστηκαν οι εξής πηγές από το internet
 
 - [Documentation Retrofit](https://square.github.io/retrofit/), γραμμένη δυστυχώς για Java
 - [Official Android Developer](https://developer.android.com)
