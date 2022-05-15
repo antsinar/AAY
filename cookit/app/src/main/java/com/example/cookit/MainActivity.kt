@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         //onclicklistener
         btnSearch.setOnClickListener(View.OnClickListener() {
             fun onClick() {
-                val text = etSearch.text.toString().toLowerCase()
+                val text = etSearch.text.toString().toLowerCase().trim()
                 Log.v("Button pressed",""+text)
                 getRecipes(text)
             }
@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                         rowAdapter.notifyDataSetChanged()
                         rvrecipeItems.adapter = rowAdapter
                     }
+                    //nullable object causes app crash
                     else{
                         d("Null error","")
                     }
