@@ -1,17 +1,18 @@
 
 # Documentation Για Android Studio Project
 <br>
-[cookEat APK](https://github.com/antsinar/AAY/releases/tag/pre-release)<br>
+[cookEat APK](https://github.com/antsinar/AAY/releases/tag/pre-release)
 <br>
 #### Για την υλοποίηση χρειάστηκαν οι εξής πηγές από το internet<br>
-- [Documentation Retrofit](https://square.github.io/retrofit/), γραμμένη δυστυχώς για Java<br>
-- [Official Android Developer](https://developer.android.com)<br>
-- [Retrofit Tutorial στο Youtube](https://www.youtube.com/watch?v=5gFrXGbQsc8)<br>
-- [Retrofit to RecyclerView Tutorial στο Youtube](https://www.youtube.com/watch?v=_bVWsL5CHh4)<br>
-- [RecyclerView Tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)<br>
-- [Intent tutorial στο Youtube](https://www.youtube.com/watch?v=wKFJsrdiGS8)<br>
-- Stack Overflow, αν και οι περισσότερες λύσεις απευθύνονταν σε Java<br>
-- Και η βοήθεια του κ.Καρασούλα<br>
+
+- [Documentation Retrofit](https://square.github.io/retrofit/), γραμμένη δυστυχώς για Java
+- [Official Android Developer](https://developer.android.com)
+- [Retrofit Tutorial στο Youtube](https://www.youtube.com/watch?v=5gFrXGbQsc8)
+- [Retrofit to RecyclerView Tutorial στο Youtube](https://www.youtube.com/watch?v=_bVWsL5CHh4)
+- [RecyclerView Tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)
+- [Intent tutorial στο Youtube](https://www.youtube.com/watch?v=wKFJsrdiGS8)
+- Stack Overflow, αν και οι περισσότερες λύσεις απευθύνονταν σε Java
+- Και η βοήθεια του κ.Καρασούλα
 
 > Τα αρχεία και τα κομμάτια κώδικα που δεν αναφέρονται εν τέλει δεν χρησιμοποιήθηκαν!
 
