@@ -4,13 +4,14 @@
 [cookEat APK](https://github.com/antsinar/AAY/releases/tag/pre-release)
 
 #### Για την υλοποίηση χρειάστηκαν οι εξής πηγές από το internet
+
 - [Documentation Retrofit](https://square.github.io/retrofit/), γραμμένη δυστυχώς για Java
 - [Official Android Developer](https://developer.android.com)
 - [Retrofit Tutorial στο Youtube](https://www.youtube.com/watch?v=5gFrXGbQsc8)
 - [Retrofit to RecyclerView Tutorial στο Youtube](https://www.youtube.com/watch?v=_bVWsL5CHh4)
 - [RecyclerView Tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)
 - [Intent tutorial στο Youtube](https://www.youtube.com/watch?v=wKFJsrdiGS8)
-- Stack Overflow, αν και οι περισσότερες λύσεις απευθύνονταν σε Java  
+- Stack Overflow, αν και οι περισσότερες λύσεις απευθύνονταν σε Java
 - Και η βοήθεια του κ.Καρασούλα
 
 > Τα αρχεία και τα κομμάτια κώδικα που δεν αναφέρονται εν τέλει δεν χρησιμοποιήθηκαν!
@@ -18,7 +19,7 @@
 ## Οθόνες
 
 ### activity_main.xml
-Εχει το ρόλο της αρχικής οθόνης και της οθόνης αναζήτησης.
+Εχει το ρόλο της αρχικής οθόνης και της οθόνης αναζήτησης.<br>
 Αποτελείτε από:
 - ένα RecyclerView ("@+id/rvrecipeItems") - για την προβολή τίτλων συνταγών 
 - ένα EditText ("@+id/etSearchIng") - για την εισαγωγή όρου προς αναζήτηση
@@ -26,7 +27,7 @@
 
 ### row_item.xml
 
-Έχει το ρόλο της συμπλήρωσης του RecyclerView με τα αποτελέσματα της αναζήτησης.
+Έχει το ρόλο της συμπλήρωσης του RecyclerView με τα αποτελέσματα της αναζήτησης.<br>
 Αποτελείτε από:
 - Ένα CardView, αντί για Constraint Layout
 - Ένα LinearLayout ("@+id/linearLayout") - για να κρατάει τα TextViews
@@ -36,7 +37,7 @@
 
 ### view_recipe.xml
 
-Έχει το ρόλο να δείχνει την επιλεγμένη συνταγή στον χρήστη.
+Έχει το ρόλο να δείχνει την επιλεγμένη συνταγή στον χρήστη.<br>
 Αποτελείτε από:
 - Ένα TextView ("@+id/tvRecipeName") - για να δείχνει το όνοματης συνταγής
 - Ένα ScrollView ("@+id/scrollView") - για να χωρέσουμε όλη τη συνταγή σε μια σελίδα
@@ -66,160 +67,160 @@
 #### app > java > com.example.cookit > network
 - *ApiInterface.kt* - Kotlin Interface
 
-Http GET Request @ BASEURL/recipe-search/{text}/
-`@GET("recipe-search/{text}/")`
-{text} defined here (dynamic url based on user input)
-`fun getRecipe(@Path("text") text:String): Call<List<Recipe>>`
-Επιστρέφει retrofit2.Call response (μία λίστα συνταγών) για να τη χρησιμοποιήσουμε στην αναζήτηση συνταγών.
-Το {text} είναι το υλικό που εισάγει ο χρήστης.
+Http GET Request @ BASEURL/recipe-search/{text}/<br>
+`@GET("recipe-search/{text}/")`<br>
+{text} defined here (dynamic url based on user input)<br>
+`fun getRecipe(@Path("text") text:String): Call<List<Recipe>>`<br>
+Επιστρέφει retrofit2.Call response (μία λίστα συνταγών) για να τη χρησιμοποιήσουμε στην αναζήτηση συνταγών.<br>
+Το {text} είναι το υλικό που εισάγει ο χρήστης.<br>
 
 ---
 
-Http GET Request @ BASEURL/recipe-detail/{id}/
-`@GET("recipe-detail/{id}/")`
-{id} defined here (dynamic url based on user input)
-`fun getDetails(@Path("id") id:Int) : Call<Recipe>`
-Επιστρέφει retrofit2.Call response (μία συνταγή) για να τη χρησιμοποιήσουμε στην προβολή της συνταγής 
-Το {id} είναι το αναγνωριστικό νούμερο της κάθε συνταγής, αποθηκευμένο στη βάση δεδομένων.
+Http GET Request @ BASEURL/recipe-detail/{id}/<br>
+`@GET("recipe-detail/{id}/")`<br>
+{id} defined here (dynamic url based on user input)<br>
+`fun getDetails(@Path("id") id:Int) : Call<Recipe>`<br>
+Επιστρέφει retrofit2.Call response (μία συνταγή) για να τη χρησιμοποιήσουμε στην προβολή της συνταγής <br>
+Το {id} είναι το αναγνωριστικό νούμερο της κάθε συνταγής, αποθηκευμένο στη βάση δεδομένων.<br>
 
 ---
 
 - *Recipe.kt* - Kotlin data class 
-Data Class γιατί αποθηκεύει μόνο δεδομένα.
+Data Class γιατί αποθηκεύει μόνο δεδομένα.<br>
 
-Περιέχει όλα τα πεδία που υπάρχουν στη βάση δεδομένων του server
+Περιέχει όλα τα πεδία που υπάρχουν στη βάση δεδομένων του server<br>
 
-`import com.google.gson.annotations.SerializedName`
-Χρησιμοποιούμε τη βιβλιοθήκη gson για να απευθυνθούμε σε αυτά τα πεδία.
+`import com.google.gson.annotations.SerializedName`<br>
+Χρησιμοποιούμε τη βιβλιοθήκη gson για να απευθυνθούμε σε αυτά τα πεδία.<br>
 
-Σημείωση ότι όλα τα πεδία είναι arguments του constructor της κλάσης.
+Σημείωση ότι όλα τα πεδία είναι arguments του constructor της κλάσης.<br>
 
 #### app > java > com.example.cookit
 
-- *RowAdapter.kt* - RecyclerView Adapter
-Κληρονομεί από την RecyclerView.Adapter
-`class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerView.Adapter<RowAdapter.ViewHolder>()`
+- *RowAdapter.kt* - RecyclerView Adapter<br>
+Κληρονομεί από την RecyclerView.Adapter<br>
+`class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerView.Adapter<RowAdapter.ViewHolder>()`<br>
 
-Φτιάχνουμε ViewHolder class η οποία κληρονομεί την RecyclerView.ViewHolder.
+Φτιάχνουμε ViewHolder class η οποία κληρονομεί την RecyclerView.ViewHolder.<br>
 
 > you have to create ViewHolders to keep references in memory. [recycler view tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)
 
-Δημιουργούμε τα ακόλουθα στοιχεία που θέλουμε να δείξουμε στον RecyclerView:
-` var name: TextView`
-`var summary: TextView`
-`var layout: LinearLayout`
-και τους δείνουμε τιμή στον constructor
-`name = itemView.tvname`
-`summary = itemView.tvsummary`
-`layout = itemView.linearLayout`
+Δημιουργούμε τα ακόλουθα στοιχεία που θέλουμε να δείξουμε στον RecyclerView:<br>
+` var name: TextView`<br>
+`var summary: TextView`<br>
+`var layout: LinearLayout`<br>
+και τους δίνουμε τιμή στον constructor<br>
+`name = itemView.tvname`<br>
+`summary = itemView.tvsummary`<br>
+`layout = itemView.linearLayout`<br>
 
-Τις απαιτεί ο Adapter
-`override fun onCreateViewHolder`
-! Θεωρώ αυτή τη μέθοδο "μαύρο κουτί". Απλά δουλεύει !
-> creates a view for the ViewHolder.[recycler view tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)
+Τις απαιτεί ο Adapter<br>
+`override fun onCreateViewHolder`<br>
+! Θεωρώ αυτή τη μέθοδο "μαύρο κουτί". Απλά δουλεύει !<br>
+> creates a view for the ViewHolder.[recycler view tutorial](https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin)<br>
 
-`override fun onBindViewHolder`
-Θέτουμε τα στοιχεία που δείχνουμε στο RecyclerView ίσα με τα στοιχεία της λίστας συνταγών στη συγκεκριμένη θέση position, δηλαδή στη συγκεκριμένη συνταγή, μέσω του viewholder αντικειμένου holder.   
-` holder.name.text = recipeList[position].name`
-`holder.summary.text = recipeList[position].summary`
-Κάνουμε τα "παιδιά" του recyclerView να αντιδρούν στο κλικ
-`holder.layout.setOnClickListener`
-Δημιουργούμε intent και περνάμε reference του RecipeActivity που θα δούμε μετά.
+`override fun onBindViewHolder`<br>
+Θέτουμε τα στοιχεία που δείχνουμε στο RecyclerView ίσα με τα στοιχεία της λίστας συνταγών στη συγκεκριμένη θέση position, δηλαδή στη συγκεκριμένη συνταγή, μέσω του viewholder αντικειμένου holder.<br>
+` holder.name.text = recipeList[position].name`<br>
+`holder.summary.text = recipeList[position].summary`<br>
+Κάνουμε τα "παιδιά" του recyclerView να αντιδρούν στο κλικ<br>
+`holder.layout.setOnClickListener`<br>
+Δημιουργούμε intent και περνάμε reference του RecipeActivity που θα δούμε μετά.<br>
 
-> It (intent) can be used with startActivity to launch an android.app.Activity [developer.android.com](https://developer.android.com/reference/kotlin/android/content/Intent)
-`val intent: Intent = Intent(context, RecipeActivity::class.java)`
+> It (intent) can be used with startActivity to launch an android.app.Activity [developer.android.com](https://developer.android.com/reference/kotlin/android/content/Intent)<br>
+`val intent: Intent = Intent(context, RecipeActivity::class.java)`<br>
 
-Η εφαρμογή κράσαρε χωρίς αυτό το flag
-`intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK`
+Η εφαρμογή κράσαρε χωρίς αυτό το flag<br>
+`intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK`<br>
 
-Δημιουργία retrofit και gson αντικειμένου
-`val BASE_URL = "https://sintagesapi.herokuapp.com/api/"`
-            `val retrofitBuilder = Retrofit.Builder()`
-                `.addConverterFactory(GsonConverterFactory.create())`
-                `.baseUrl(BASE_URL)`
-                `.build()`
-                `.create(ApiInterface::class.java)`
+Δημιουργία retrofit και gson αντικειμένου<br>
+`val BASE_URL = "https://sintagesapi.herokuapp.com/api/"`<br>
+            `val retrofitBuilder = Retrofit.Builder()`<br>
+                `.addConverterFactory(GsonConverterFactory.create())`<br>
+                `.baseUrl(BASE_URL)`<br>
+                `.build()`<br>
+                `.create(ApiInterface::class.java)`<br>
 
-Παίρνουμε της πληροφορίες με τη GET request χρησιμοποιόντας το recipeList[position].id ως id.
-Έτσι παίρνουμε τις πληροφορίες της συνταγής πουυ πάτησε ο χρήστης. 
-`val retrofitData = retrofitBuilder.getDetails(recipeList[position].id)`
+Παίρνουμε της πληροφορίες με τη GET request χρησιμοποιόντας το recipeList[position].id ως id.<br>
+Έτσι παίρνουμε τις πληροφορίες της συνταγής πουυ πάτησε ο χρήστης. <br>
+`val retrofitData = retrofitBuilder.getDetails(recipeList[position].id)`<br>
 
-Στη συνέχεια καλούμε τη μέθοδο enqueue του retrofit
-Αν είναι πετυχημένη (onResponse), τότε θέτουμε μεταβλητή `val responseBody = response.body()`, όπου response.body το σώμα της απάντησης στη GET request.
+Στη συνέχεια καλούμε τη μέθοδο enqueue του retrofit<br>
+Αν είναι πετυχημένη (onResponse), τότε θέτουμε μεταβλητή `val responseBody = response.body()`, όπου response.body το σώμα της απάντησης στη GET request.<br>
 
-Αν αυτή δεν είναι null, τότε ετοιμάζουμε να περάσουμε όλες τις πληροφορίες τις συνταγής στο επόμενο activity με την εντολή `intent.putExtra`.
+Αν αυτή δεν είναι null, τότε ετοιμάζουμε να περάσουμε όλες τις πληροφορίες τις συνταγής στο επόμενο activity με την εντολή `intent.putExtra`.<br>
 
-Αν είναι null τυπώνουμε μήνυμα λάθους στη κονσόλα για να μην κρασάρει το πρόγραμμα.
+Αν είναι null τυπώνουμε μήνυμα λάθους στη κονσόλα για να μην κρασάρει το πρόγραμμα.<br>
 
-Αν η μέθοδος enqueue δεν ήταν πετυχημένη για οποιοδήποτε λόγο (onFailure), τυπώνουμε μήνυμα λάθους στη κονσόλα.
+Αν η μέθοδος enqueue δεν ήταν πετυχημένη για οποιοδήποτε λόγο (onFailure), τυπώνουμε μήνυμα λάθους στη κονσόλα.<br>
 
-`override fun getItemCount`
-Τέλος επιστρέφουμε το μέγεθος της λίστας συνταγών στην getItemCount
+`override fun getItemCount`<br>
+Τέλος επιστρέφουμε το μέγεθος της λίστας συνταγών στην getItemCount<br>
 
 ---
 
 - *RecipeActivity.kt* - View recipe
 
-`override fun onCreate`
-Θέτουμε view `setContentView(R.layout.view_recipe)`
+`override fun onCreate`<br>
+Θέτουμε view `setContentView(R.layout.view_recipe)`<br>
 
-`btnToSearch.setOnClickListener(View.OnClickListener {`
-            `fun onClick(){`
-                `val i = Intent(this, MainActivity::class.java)`
-                `startActivity(i)`
-            `}`
-            `onClick()`
-OnClickListener για το κουμπί ("@+id/btnToSearch") ώστε να επιστρέφει στην αρχική οθόνη.
+`btnToSearch.setOnClickListener(View.OnClickListener {`<br>
+            `fun onClick(){`<br>
+                `val i = Intent(this, MainActivity::class.java)`<br>
+                `startActivity(i)`<br>
+            `}`<br>
+            `onClick()`<br>
+OnClickListener για το κουμπί ("@+id/btnToSearch") ώστε να επιστρέφει στην αρχική οθόνη.<br>
 
-`getIncomingIntent()`
-Τρέχει αυτή συνάρτηση.
+`getIncomingIntent()`<br>
+Τρέχει αυτή συνάρτηση.<br>
 
-`private fun getIncomingIntent`
-Ελέγχει αν η το intent έχει τα απαραίτητα extras (στοιχεία συνταγής) και στη συνέχεια τα θέτει σε μεταβλητές. Στη συνέχεια περνάμε αυτές τις μεταβλητές στη συνάρτηση setRecipe.
+`private fun getIncomingIntent`<br>
+Ελέγχει αν η το intent έχει τα απαραίτητα extras (στοιχεία συνταγής) και στη συνέχεια τα θέτει σε μεταβλητές. Στη συνέχεια περνάμε αυτές τις μεταβλητές στη συνάρτηση setRecipe.<br>
 
-`private fun setRecipe`
-Βρίσκει όλα τα στοιχεία από το view_recipe.xml και τους δίνει την αντίστοιχη τιμή που περάσαμε στη συνάρτηση από τη getIncomingIntent. Αυτές είναι και οι τιμές που βλέπουμε στην οθόνη μας.
+`private fun setRecipe`<br>
+Βρίσκει όλα τα στοιχεία από το view_recipe.xml και τους δίνει την αντίστοιχη τιμή που περάσαμε στη συνάρτηση από τη getIncomingIntent. Αυτές είναι και οι τιμές που βλέπουμε στην οθόνη μας.<br>
 
 ---
 
 - *MainActivity.kt*
 
-` lateinit var rowAdapter: RowAdapter`
-    `lateinit var LinearLayoutManager: LinearLayoutManager`
-Θέτουμε μεταβλητές για την κλάση RowAdapter kai για τον linearLayoutManager
+` lateinit var rowAdapter: RowAdapter`<br>
+    `lateinit var LinearLayoutManager: LinearLayoutManager`<br>
+Θέτουμε μεταβλητές για την κλάση RowAdapter kai για τον linearLayoutManager<br>
 
-`override fun onCreate`
-Θέτουμε view `setContentView(R.layout.activity_main)`
+`override fun onCreate`<br>
+Θέτουμε view `setContentView(R.layout.activity_main)`<br>
 
-`var btnSearch: Button`
-`var etSearch: EditText`
-`btnSearch = findViewById(R.id.btnSearchRecipe)`
-`etSearch = findViewById(R.id.etSearchIng)`
-Βρίσκουμε τα στοιχεία από το activity_main.xml
+`var btnSearch: Button`<br>
+`var etSearch: EditText`<br>
+`btnSearch = findViewById(R.id.btnSearchRecipe)`<br>
+`etSearch = findViewById(R.id.etSearchIng)`<br>
+Βρίσκουμε τα στοιχεία από το activity_main.xml<br>
 
-`rvrecipeItems.setHasFixedSize(true)`
-        `LinearLayoutManager = LinearLayoutManager(this)`
-        `rvrecipeItems.layoutManager = LinearLayoutManager`
-Σετάρουμε το RecyclerView
+`rvrecipeItems.setHasFixedSize(true)`<br>
+        `LinearLayoutManager = LinearLayoutManager(this)`<br>
+        `rvrecipeItems.layoutManager = LinearLayoutManager`<br>
+Σετάρουμε το RecyclerView<br>
 
-`btnSearch.setOnClickListener(View.OnClickListener() {`
-            `fun onClick() {`
-                `val text = etSearch.text.toString().toLowerCase().trim()`
-            `    Log.v("Button pressed",""+text)`
-            `    getRecipes(text)`
-            `}`
-            `onClick()`
-        `})`
-Σετάρουμε OnClickListener για το κουμπί ("@+id/btnSearchRecipe") και παίρνουμε το value που έβαλε ο χρήστης στο editText ("@+id/etSearchIng").
-Είναι σημαντικό πως όταν παίρνουμε το κείμενο από το editText ("@+id/etSearchIng") το μετατρέπουμε σε lowercase και κόβουμε τα κενά με τις μεθόδους toLowerCase() και trim(). Έτσι παίρνουμε περισσότερα αποτελέσματα στην αναζήτηση.
+`btnSearch.setOnClickListener(View.OnClickListener() {`<br>
+            `fun onClick() {`<br>
+                `val text = etSearch.text.toString().toLowerCase().trim()`<br>
+            `    Log.v("Button pressed",""+text)`<br>
+            `    getRecipes(text)`<br>
+            `}`<br>
+            `onClick()`<br>
+        `})`<br>
+Σετάρουμε OnClickListener για το κουμπί ("@+id/btnSearchRecipe") και παίρνουμε το value που έβαλε ο χρήστης στο editText ("@+id/etSearchIng").<br>
+Είναι σημαντικό πως όταν παίρνουμε το κείμενο από το editText ("@+id/etSearchIng") το μετατρέπουμε σε lowercase και κόβουμε τα κενά με τις μεθόδους toLowerCase() και trim(). Έτσι παίρνουμε περισσότερα αποτελέσματα στην αναζήτηση.<br>
 
-`getRecipes(text)`
-Μόλις πατήσουμε το κουμπί καλούμε τη getRecipes με παράμετρο την είσοδο του χρήστη.
+`getRecipes(text)`<br>
+Μόλις πατήσουμε το κουμπί καλούμε τη getRecipes με παράμετρο την είσοδο του χρήστη.<br>
 
-` private fun getRecipes`
-Ακολουθεί ο ίδιος κώδικας με πριν για την κατασκευή retrofit και gson αντικειμένου. Σε αυτή την περίπτωση έχουμε στην onResponse
-`rowAdapter = RowAdapter(baseContext, responseBody)`
-                        `rowAdapter.notifyDataSetChanged()`
-                        `rvrecipeItems.adapter = rowAdapter`
-που ανανεώνει το recyclerView και βλέπουμε τα αποτελέσματα της αναζήτησης στην οθόνη μας.
+` private fun getRecipes`<br>
+Ακολουθεί ο ίδιος κώδικας με πριν για την κατασκευή retrofit και gson αντικειμένου. Σε αυτή την περίπτωση έχουμε στην onResponse<br>
+`rowAdapter = RowAdapter(baseContext, responseBody)`<br>
+                        `rowAdapter.notifyDataSetChanged()`<br>
+                        `rvrecipeItems.adapter = rowAdapter`<br>
+που ανανεώνει το recyclerView και βλέπουμε τα αποτελέσματα της αναζήτησης στην οθόνη μας.<br>
 
