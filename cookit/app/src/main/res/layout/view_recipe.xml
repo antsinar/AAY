@@ -9,6 +9,7 @@
         android:id="@+id/btnToSearch"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:background="@drawable/button_custom"
         android:text="Πισω στην αναζητηση"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,8 +27,8 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="350dp"
-        android:layout_height="824dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnToSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"

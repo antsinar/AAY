@@ -121,6 +121,7 @@ class RecipeActivity : AppCompatActivity(){
 
         tvRecipeName.text = name
         tvAuthor.text = author
+
         tvIng0.text = ing0
         tvIng1.text = ing1
         tvIng2.text = ing2
@@ -132,23 +133,62 @@ class RecipeActivity : AppCompatActivity(){
         tvIng8.text = ing8
         tvIng9.text = ing9
         tvIng10.text = ing10
+        if(tvIng10.text == ""){
+            tvIng10.visibility = View.GONE
+        }
         tvIng11.text = ing11
+        if(tvIng11.text == ""){
+            tvIng11.visibility = View.GONE
+        }
         tvIng12.text = ing12
+        if(tvIng12.text == ""){
+            tvIng12.visibility = View.GONE
+        }
         tvIng13.text = ing13
+        if(tvIng13.text == ""){
+            tvIng13.visibility = View.GONE
+        }
         tvIng14.text = ing14
+        if(tvIng14.text == ""){
+            tvIng14.visibility = View.GONE
+        }
         tvIng15.text = ing15
+        if(tvIng15.text == ""){
+            tvIng15.visibility = View.GONE
+        }
         tvIng16.text = ing16
+        if(tvIng16.text == ""){
+            tvIng16.visibility = View.GONE
+        }
         tvIng17.text = ing17
+        if(tvIng17.text == ""){
+            tvIng17.visibility = View.GONE
+        }
         tvIng18.text = ing18
+        if(tvIng18.text == ""){
+            tvIng18.visibility = View.GONE
+        }
         tvIng19.text = ing19
+        if(tvIng19.text == ""){
+            tvIng19.visibility = View.GONE
+        }
         tvStep0.text = step0
         tvStep1.text = step1
         tvStep2.text = step2
         tvStep3.text = step3
         tvStep4.text = step4
         tvStep5.text = step5
+        if(tvStep5.text == ""){
+            tvStep5.visibility = View.GONE
+        }
         tvStep6.text = step6
+        if(tvStep6.text == ""){
+            tvStep6.visibility = View.GONE
+        }
         tvStep7.text = step7
+        if(tvStep7.text == ""){
+            tvStep7.visibility = View.GONE
+        }
     }
 
     private fun getDetails(id: Int){

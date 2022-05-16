@@ -33,6 +33,7 @@
         android:id="@+id/btnSearchRecipe"
         android:layout_width="210dp"
         android:layout_height="50dp"
+        android:background="@drawable/button_custom"
         android:text="Αναζήτηση Υλικού"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
