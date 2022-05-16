@@ -1,5 +1,6 @@
 package com.example.cookit
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
@@ -52,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
         //API Call
         private fun getRecipes(text:String){
             val BASE_URL = "https://sintagesapi.herokuapp.com/api/"
@@ -85,6 +88,10 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onFailure(call: Call<List<Recipe>?>, t: Throwable) {
                     d("failed",""+t.message)
+                    if(t is IOException){
+                        val toast = Toast.makeText(applicationContext ,"Σιγουρευτείτε πως έχετε σύνδεση στο Ίντερνετ", Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
                 }
             })
         }
