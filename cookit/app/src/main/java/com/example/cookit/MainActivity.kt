@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             fun onClick() {
                 val text = etSearch.text.toString().toLowerCase().trim()
                 Log.v("Button pressed",""+text)
+
                 getRecipes(text)
             }
             onClick()
@@ -89,6 +90,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<List<Recipe>?>, t: Throwable) {
                     d("failed",""+t.message)
                     if(t is IOException){
+
                         val toast = Toast.makeText(applicationContext ,"Σιγουρευτείτε πως έχετε σύνδεση στο Ίντερνετ", Toast.LENGTH_SHORT)
                         toast.show()
                     }

@@ -22,18 +22,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RecipeActivity : AppCompatActivity(){
-    //lateinit var recipeAdapter: ItemAdapter
-    lateinit var LinearLayoutManager: LinearLayoutManager
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.view_recipe)
-
-        //rvRecipeActivity.setHasFixedSize(true)
-        //LinearLayoutManager = LinearLayoutManager(this)
-        //rvRecipeActivity.layoutManager = LinearLayoutManager
 
         btnToSearch.setOnClickListener(View.OnClickListener {
             fun onClick(){
@@ -83,7 +75,7 @@ class RecipeActivity : AppCompatActivity(){
             val id: Int = intent.getIntExtra("id",1)
 
             setRecipe(name,author,ing0,ing1,ing2,ing3,ing4,ing5,ing6,ing7,ing8,ing9,ing10,ing11,ing12,ing13,ing14,ing15,ing16,ing17,ing18,ing19,step0,step1,step2,step3,step4,step5,step6,step7)
-            getDetails(id)
+
         }
     }
 
@@ -189,40 +181,6 @@ class RecipeActivity : AppCompatActivity(){
         if(tvStep7.text == ""){
             tvStep7.visibility = View.GONE
         }
-    }
-
-    private fun getDetails(id: Int){
-        val BASE_URL = "https://sintagesapi.herokuapp.com/api/"
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(ApiInterface::class.java)
-
-        val retrofitData = retrofitBuilder.getDetails(id)
-        retrofitData.enqueue(object : Callback<Recipe> {
-
-            override fun onResponse(
-                call: Call<Recipe>,
-                response: Response<Recipe>
-            ) {
-                val responseBody = response.body()
-
-                //So app does not crash
-                if (responseBody != null) {
-                    d("inside onResponse",""+responseBody)
-                    //recipeAdapter = ItemAdapter(baseContext, responseBody)
-                    //recipeAdapter.notifyDataSetChanged()
-                    //rvRecipeActivity.adapter = recipeAdapter
-                } else {
-                    d("Null error", "")
-                }
-            }
-
-            override fun onFailure(call: Call<Recipe>, t: Throwable) {
-                Log.d("failed", "" + t.message)
-            }
-        })
     }
 
 

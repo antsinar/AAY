@@ -22,6 +22,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
 
 class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerView.Adapter<RowAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -111,6 +112,11 @@ class RowAdapter(val context: Context, val recipeList: List<Recipe>) : RecyclerV
 
                 override fun onFailure(call: Call<Recipe>, t: Throwable) {
                     Log.d("failed", "" + t.message)
+                    if(t is IOException){
+
+                        val toast = Toast.makeText(context ,"Σιγουρευτείτε πως έχετε σύνδεση στο Ίντερνετ", Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
                 }
             })
 
