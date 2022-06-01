@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#6FFFEB3B">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btnToSearch"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:background="@drawable/button_custom"
-        android:text="Πισω στην αναζητηση"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/home_icon_silhouette"
+        android:tint="@color/orange"
+        app:iconTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -361,7 +364,6 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRecipeName"
             app:layout_constraintVertical_bias="1.0" />
     -->
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
