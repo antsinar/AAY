@@ -10,7 +10,7 @@
         />
 
     <gradient
-        android:startColor="#FF5722"
-        android:endColor="#FF5722"
+        android:startColor="@color/button"
+        android:endColor="@color/button"
         />
 </shape>

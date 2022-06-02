@@ -12,7 +12,7 @@
         android:layout_height="60dp"
         android:background="@android:color/transparent"
         android:src="@mipmap/home_icon_silhouette"
-        android:tint="@color/orange"
+        android:tint="@color/button"
         app:iconTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
