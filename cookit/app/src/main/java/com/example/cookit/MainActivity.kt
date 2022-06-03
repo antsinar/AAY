@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
+import android.util.Log.e
 import android.view.View
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
+import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +48,11 @@ class MainActivity : AppCompatActivity() {
         btnSearch.setOnClickListener(View.OnClickListener() {
             fun onClick() {
                 val text = etSearch.text.toString().toLowerCase().trim()
+                if (text == ""){
+                    val toast = Toast.makeText(applicationContext, "Εισάγετε όρο αναζήτησης", Toast.LENGTH_SHORT)
+                    toast.show()
+                    return
+                }
                 Log.v("Button pressed",""+text)
 
                 getRecipes(text)
@@ -73,6 +80,17 @@ class MainActivity : AppCompatActivity() {
                     response: Response<List<Recipe>>
                 ) {
                     val responseBody = response.body()
+
+                    if (!responseBody?.isEmpty()!!){
+                        val imageview : ImageView = findViewById(R.id.ivcookEat)
+                        imageview.visibility = View.GONE
+                    }
+
+                    if(responseBody.isEmpty()){
+                        val toast = Toast.makeText(applicationContext, "Δε βρέθηκαν αποτελέσματα", Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
+
 
                     //So app does not crash
                     if (responseBody != null){
